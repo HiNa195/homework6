@@ -16,14 +16,18 @@ const words = [{
 
 function makeContent(words) {
    const x = document.getElementById('content');
+   const y = document.createElement('dl');
    for (let i = 0; i < words.length; i++) {
-      let t = document.createElement('dt');
-      let d = document.createElement('dd');
+      const t = document.createElement('dt');
+      const d = document.createElement('dd');
+      // Set properties
       t.textContent = words[i].term;
       d.textContent = words[i].definition;
-      x.appendChild(t);
-      x.appendChild(d);
+      // Add to the dl
+      y.appendChild(t);
+      y.appendChild(d);
    }
+   // Add the dl to the page
+   x.appendChild(y);
 }
-
 makeContent(words);
